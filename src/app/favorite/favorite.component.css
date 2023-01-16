@@ -1,0 +1,78 @@
+.movie {
+  transition: all 0.2s ease-in-out;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+  overflow: hidden;
+}
+.movie:hover {
+  transition: all 0.2s ease-in-out;
+  transform: scale(1.1);
+}
+
+.modalClass {
+  background-color: #fefefe;
+  padding: 1vw;
+  width: 50vw;
+  display: flex;
+  flex-direction: row;
+  overflow: auto;
+}
+.modalPoster {
+  padding-right: 1vw;
+  height: 25vw;
+  width: 25vw;
+}
+.modalRight {
+  margin: auto;
+  max-height: 40vw;
+}
+.modal {
+  margin-top: 1.6vw;
+}
+.modalTitle {
+  text-align: center;
+  font-weight: 500;
+  font-size: calc(12px + 1.5vw);
+}
+
+.modalOverview {
+  font-size: calc(10px + 0.5vw);
+}
+
+.titleStrip {
+  display: block;
+  height: auto;
+  width: 100%;
+  margin-top: 35%;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* opacity: 0.5; */
+}
+h2 {
+  width: 97%;
+  transform: translateX(1.3%);
+}
+
+.title {
+  opacity: 1;
+  color: white;
+  font-weight: 500;
+  font-size: 2.5vh;
+  padding-top: 1vh;
+}
+
+.favButton {
+  outline: none;
+
+  margin-top: 1vw;
+  color: white;
+  font-weight: 400;
+  font-size: calc(10px + 0.4vw);
+}
+
+.starIcon {
+  color: rgb(255, 210, 48);
+  font-size: 1.7vw;
+  vertical-align: middle;
+}

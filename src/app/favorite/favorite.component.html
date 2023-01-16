@@ -1,0 +1,40 @@
+<h2><b>My Favorites </b></h2>
+<ul  class="flex flex-wrap justify-center" >
+<ng-container *ngFor='let movies of movieIDs'>
+<!-- <button (click)="favList()">CLICK</button> -->
+<div  class="p-5 text-center w-1/4">
+<li  class="movie flex border rounded-xl h-60" (click)="openDialog(template)"
+[ngStyle]="{'background-image' : 'url('+ movies['backdrop_path'] +')'}">
+  <div  class="titleStrip m-auto">
+<!-- <div class="titleStrip"> -->
+  <p class="title text-lg">{{movies['title']}}
+  </p>
+
+</div>
+
+</li>
+<ng-template  #template>
+  <div class="modalClass" [matDialogClose]="isModalHidden">
+  <img class="modalPoster" src="{{movies['poster_path']}}">
+
+  <div class="modalRight">
+  <h1 class="modalTitle">{{movies['title']}}</h1>
+  <p class="modalOverview modal">{{movies['genre_ids'].join(' | ')}}</p>
+
+  <p class="modalOverview modal">
+    <span class="material-icons starIcon" data-darkreader-inline-color="">star</span>
+    {{movies['vote_average']}}/10 | Votes: {{movies['vote_count']}}</p>
+  <p class="modalOverview modal">{{movies['overview']}}</p>
+  <p class="modalOverview modal">Released: {{movies['release_date']}}</p>
+  <button  class="favButton bg-red-500 rounded p-3 hover:bg-red-700 active:bg-red-400"
+  (click)="removeFavorite()">Unfavorite</button>
+  <!-- <button *ngIf="isInFavorite()" (click)="removeFromFavorite()"
+  class="favButton bg-red-500 rounded p-3 hover:bg-red-700 active:bg-red-400">Unfavorite</button>
+ -->
+</div>
+  </div>
+</ng-template>
+</div>
+</ng-container>
+</ul>
+<div *ngIf="!movieIDs[0]"><i>No movies in your favorite.</i></div>

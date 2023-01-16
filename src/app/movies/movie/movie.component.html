@@ -1,0 +1,32 @@
+<li class="movie flex border rounded-xl h-60" (click)="openDialog(template)"
+[ngStyle]="{'background-image' : 'url('+ movie.backdrop_path +')'}">
+  <!-- <img [src]="movie.image" [alt]="movie.name" class="m-auto rounded-sm"> -->
+  <div  class="titleStrip m-auto">
+<!-- <div class="titleStrip"> -->
+  <p class="title text-lg">{{movie.title}}</p>
+</div>
+
+</li>
+
+<ng-template   #template>
+  <div class="modalClass" [matDialogClose]="isModalHidden">
+  <img class="modalPoster" src="{{movie.poster_path}}">
+
+  <div class="modalRight">
+  <h1 class="modalTitle">{{movie.title}}</h1>
+  <p class="modalOverview modal">{{movie.genre_ids.join(' | ')}}</p>
+
+  <p class="modalOverview modal">
+    <span class="material-icons starIcon" data-darkreader-inline-color="">star</span>
+    {{movie.vote_average}}/10 | Votes: {{movie.vote_count}}</p>
+  <p class="modalOverview modal">{{movie.overview}}</p>
+  <p class="modalOverview modal">Released: {{movie.release_date}}</p>
+  <button (click)="addToFavorite()"
+  class="favButton bg-red-500 rounded p-3 hover:bg-red-700 active:bg-red-400">Favorite</button>
+  <!-- <button *ngIf="isInFavorite()" (click)="removeFromFavorite()"
+  class="favButton bg-red-500 rounded p-3 hover:bg-red-700 active:bg-red-400">Unfavorite</button>
+ -->
+
+</div>
+  </div>
+</ng-template>

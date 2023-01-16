@@ -1,0 +1,26 @@
+.movieIcon {
+  font-size: 25px;
+  vertical-align: middle;
+  margin-top: -0.2vw;
+}
+.title {
+  margin-left: 1vw;
+  font-size: 21px;
+  font-weight: 500;
+  transition: all 0.05s ease-in-out;
+}
+.mx-4:hover {
+  text-decoration: underline;
+}
+.title:hover {
+  transition: all 0.05s ease-in-out;
+  transform: scale(1.05);
+}
+
+.navBar {
+  background-color: #ff3162;
+}
+footer {
+  width: 97%;
+  transform: translateX(2%);
+}

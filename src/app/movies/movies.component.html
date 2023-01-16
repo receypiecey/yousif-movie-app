@@ -1,0 +1,14 @@
+<h2 class="header">Movie Selection > <ng-container *ngIf="!searchText">Trending</ng-container>
+  <ng-container *ngIf="searchText">'{{searchText}}'</ng-container>
+</h2>
+<!-- <button (click)="grabMovieId()" [disabled]="isDisabled"> Show Movies</button> -->
+
+
+  <input type="text"  class="searchBar p-2 rounded border" name="search" [(ngModel)]="searchText" (ngModelChange)="searchMovie(searchText)" placeholder="Search movies...">
+  <div class="subheader"><i >(Click a movie to save it to Favorites.)</i>
+</div>
+<ul *ngIf="isShowing" class="flex flex-wrap justify-center" >
+  <ng-container *ngFor="let singleMovie of movies; let i =index">
+    <app-movie [movie]="singleMovie" class="p-5 text-center movSelection"></app-movie>
+  </ng-container>
+</ul>
